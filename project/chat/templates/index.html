@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="indexstyle.css"> -->
+</head>
+<style>
+    
+.title {
+  margin-top: 70px;
+    font-size: 72px;
+    background: -webkit-linear-gradient(#454847, #d6dada);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 40px;
+     
+  }
+#nav{
+  display: flex;
+  justify-content: flex-end;
+  font: 30px;
+  gap: 20px;
+  margin-right: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #454847;
+
+  
+}
+#mainna{
+  display: flex;
+  margin-right: 1200px;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.hidden{
+  opacity: 0;
+  transition: all 2s;
+}
+.show{
+  opacity: 1;
+}
+
+#dev:hover{
+  cursor: pointer;
+  text-decoration: underline rgb(79, 244, 244);
+}
+#ps:hover{
+  cursor: pointer;
+  text-decoration: underline rgb(79, 244, 244);
+}
+#a:hover{
+  cursor: pointer;
+  text-decoration: underline rgb(79, 244, 244);
+}
+#da:hover{
+  cursor: pointer;
+  text-decoration: underline rgb(79, 244, 244);
+}
+
+#mainna:hover{
+  text-decoration: underline rgb(79, 244, 244);
+  cursor: pointer;
+}
+
+.smalltalk{
+  color: #454847;
+  margin-left: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.buttons{
+  
+  outline: none;
+  padding: 20px;
+  border-radius: 9px;
+  border: lightgreen solid;
+  background-color: lightgreen;
+  margin-left: 20px;
+  margin-top: 50px;
+}
+.buttons:hover{
+  cursor: pointer;
+  background-color: rgb(59, 205, 57);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+/* 
+#INTRODUCTION{
+  font-size:20px;
+  margin-top: 250px;
+  display: flex;
+  justify-content: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#INTROSEC{
+  background-color: #6d706f;
+} */
+a{
+  background-color: transparent;
+  text-decoration: none;
+  color: transparent;
+}
+html{
+  scroll-behavior: smooth;
+}
+</style>
+
+<body>
+    <section class="section">
+        <div id="nav" class="hidden">
+            <h2 id="mainna" class="navs">Chat</h2>
+            <h2 class="navs" id="ps">Privacy&Safety</h2>
+            <h2 class="navs" id="a">About</h2>
+            <h2 class="navs" id="da">Desktop App</h2>
+            <h2 class="navs" id="dev">Developers</h2>
+        </div>
+        <div class="chat">
+            <h1 class="title hidden">Chat</h1>
+            <h1 class="title hidden">Wherever,</h1>
+            <h1 class="title hidden">Whenever</h1>
+        </div>
+    
+        <h3 class="smalltalk hidden">Chatter makes it easy and fun to be around with your friends and family</h3>
+        <div>
+            <a href="signup">
+                <button class="buttons hidden">Signup</button>
+            </a>
+            <a href="login">
+                <button class="buttons hidden">Login</button>
+            </a>
+        </div>
+    </section>
+
+    <!-- <section id="INTROSEC">
+        <h3 id="INTRODUCTION">Flocon is a way to a way to connect with people with a lot of supports and we care about your safety</h3>
+        <br>
+        <br>
+        <br>
+        <h3>Our Team Is Working On The App For To Enchance You Experience</h3>
+    </section> -->
+    <script>const observer = new IntersectionObserver((entries)=>{
+        entries.forEach((entries)=>{
+            if (entries.isIntersecting){
+                entries.target.classList.add('show');
+            }else{
+                entries.target.classList.remove("show")
+            }
+        })
+    })
+    
+    
+    const hiddenElements = document.querySelectorAll('.hidden')
+    hiddenElements.forEach((el)=> observer.observe(el))</script>
+</body> 
+</html>
